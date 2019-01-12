@@ -15,8 +15,6 @@ uint32_t buffer;
 typedef enum { SUBIDA, DESCIDA } BORDA_TypeDef;
 int ultima_borda = 0;
 
-int proximo_acionamento = 0;
-
 int tick = 0;
 
 #define REGISTRADOR		GPIOC
@@ -86,7 +84,7 @@ void EXTI1_IRQHandler() {
 
 int main(void) {
 
-	SysTick_Config(160);	// 10uS
+	SysTick_Config(160);	// 10uS (Frequência do ARM em 16MHz)
 
 	// GPIO
 
